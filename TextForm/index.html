@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+
+</head>
+<script  src="./TextFormScript.js"></script>
+<body>
+    <form>
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" oninput="draw()"><br>
+        <label for="backgorund">Background color (click the box below to select Color)</label><br>
+        <input type="color" id="backgorund" name="backgorund"
+        value="#FFFFFF" oninput="draw()"><br>
+        <label for="textColor">text color (click the box below to select Color)</label><br>
+        <input type="color" id="textColor" name="textColor"
+        value="#000000" oninput="draw()"><br>
+        <label for="vol">Text Size (between 12 and 48):</label>
+        <input type="range" id="TextSize" name="TextSize" min="12" max="48" value="12" oninput="draw()">
+        <p>Please select your Font</p>
+        <input type="radio" id="Courier New" name="Font" value="Courier New" oninput="draw('Courier New')">
+        <label for="Courier New">Courier New</label><br>
+        <input type="radio" id="Brush Script MT" name="Font" value='BrushScript MT' oninput="draw('BrushScript MT')">
+        <label for="Brush Script MT">Brush Script MT</label><br>
+        <input type="radio" id="Arial" name="Font" value="Arial" oninput="draw('Arial')">
+        <label for="Arial">Arial</label>
+    </form>
+    <div class="container">
+    <canvas id="canvas" width="700" height="300" style="border:1px solid"></canvas>
+    </div>
+    <button type="button" onclick="reset()">Reset</button>
+    </body>
+</html>
