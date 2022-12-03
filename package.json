@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/WHuang-dot/3610/issues"
   },
-  "homepage": "https://github.com/WHuang-dot/3610#readme"
+  "homepage": "https://github.com/WHuang-dot/3610#readme",
+  "dependencies": {
+    "axios": "^1.2.0",
+    "chart.js": "^4.0.1"
+  }
 }
