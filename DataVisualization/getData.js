@@ -1,6 +1,6 @@
 var config = {
   method: 'get',
-  url: 'https://data.cityofnewyork.us/resource/635b-dk9f.json',
+  url: 'https://data.cityofnewyork.us/resource/635b-dk9f.json?$limit=2000',
   headers: {}
 };
 
