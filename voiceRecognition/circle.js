@@ -36,18 +36,28 @@ function test(){
         recognition.onresult = function(event) { 
             resultInText = event.results[0][0].transcript
             console.log(resultInText)
+            if(resultInText.toLowerCase() === "help"){
+                document.getElementById("message").innerHTML = "Say color, followed by a color, to set the circle color. Say size, followed of a number from 1 to 300, to set the diameter of the circle."
+            }else{
+                
+            }
             let sizeIndex = resultInText.indexOf("size")
             let sizeNumber = parseInt(resultInText.substring(sizeIndex+5,resultInText.length))
             console.log(sizeNumber)
             if(sizeNumber < 1){
                 console.log("Too small")
+                document.getElementById("message").innerHTML = "Too small"
             }else if(sizeNumber > 300){
                 console.log("Too big")
-            }else if(!sizeNumber){
+                document.getElementById("message").innerHTML = "Too big"
+            }else if(!sizeNumber && resultInText.includes("size")){
                 console.log("Invalid Size")
+                document.getElementById("message").innerHTML = "Invalid Size"
             }else{
-                radius = sizeNumber
-                draw()
+                if(sizeNumber){
+                    radius = sizeNumber
+                    draw()
+                }
             }
             if(resultInText.toLowerCase() === "color blue"){
                 console.log("change color to blue")
