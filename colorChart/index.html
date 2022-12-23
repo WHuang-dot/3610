@@ -1,0 +1,53 @@
+<html>
+<head>
+
+<script>
+    var fruit = [
+	{name:"Strawberry", quantity:15, color:"red"},
+	{name:"Peach", quantity:10, color:"orange"},
+    {name:"Banana", quantity:25, color:"yellow"},
+    {name:"Pear", quantity:10, color:"yellow"},
+    {name:"Grape", quantity:20, color:"purple"}
+    ];
+
+
+    function draw() {
+        /* Accepting and seperating comma seperated values */
+        
+        var canvas = document.getElementById('myCanvas');
+        var ctx = canvas.getContext('2d');
+
+        var width = 80; //bar width
+        var X = 50; // first bar position 
+        var base = 200;
+        
+        for (var i =0; i<fruit.length; i++) {
+            ctx.fillStyle = fruit[i].color;
+            var h = fruit[i].quantity * 10;
+            ctx.fillRect(X,canvas.height - h,width,h );
+            
+            X +=  width+15;
+            /* text to display Bar number */
+            ctx.fillStyle = '#4da6ff';
+            ctx.fillText(fruit[i].name,X-70,canvas.height - h -10);
+        }
+            /* Text to display scale */
+            ctx.fillStyle = '#000000';
+            ctx.fillText('Scale X : '+canvas.width+' Y : '+canvas.height,800,10);
+  
+    }
+    function reset(){
+         var canvas = document.getElementById('myCanvas');
+          var ctx = canvas.getContext('2d');
+           ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+</script>
+</head> 
+<body align="center">
+    <input type="button" value="Draw" name="Draw" onclick="draw()">
+    <input type="button" value="Clear" name="Clear" onclick="reset()"><br><br>
+    <canvas id="myCanvas" width="900" height="500" style="border:1px solid #c3c3c3;">
+    </canvas>
+
+</body>
+</html>
